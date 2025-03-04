@@ -21,9 +21,31 @@ function spitRhymes() {
 spitRhymes(); //calling/invoking/running a fucntion
 
 function fruitProcessor(apples, oranges) { //function has parameters i.e. declared variables within the function
-    return `A blend of ${oranges} oranges and ${apples} apples.`;
+    return `A blend of ${oranges} oranges and ${apples} apples.`; //parameters are placeholders for the actual values
 }
 
-console.log(fruitProcessor(2, 3)); //arguments passed to the function i.e. values for the paramenters when invoking the function
+console.log(fruitProcessor(2, 3)); //arguments (actual values) passed to the function i.e. values for the paramenters when invoking the function
 
-// Deaclations vs Expressions
+//Declarations vs Expressions
+//Function declaration - functions can be called before they are declared i.e because of a process called hoisting
+function calAge1(dob) {
+    return 2037 - dob;
+}
+const age1 = calAge1(2000);
+
+//Function expression - functions can be called before they are declared/initialized
+const calcAge2 = function (dob) { //unamed/anonymous function
+    return 2037 - dob;
+}
+const age2 = calcAge2(2001);
+
+console.log(age1, age2);
+
+// Arrow functions - Special form of function expression
+// Return occurs implicitly for one-line expression i.e. without having to explicitly use the 'return' keyword
+const calcAge3 = dob => 2037 - dob;
+const age3 = calcAge3(2002);
+
+console.log(age1, age2, age3);
+
+
