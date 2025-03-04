@@ -1,5 +1,5 @@
-'use strict'; //activates strict mode - Can also be activated for a specific block/function. Good practice is to activate for entire piece of code
-// Strict mode make it easier for devs to avoid accidental errors
+'use strict'; //activates strict mode - Can also be activated for a specific block/function. Good practice is to activate for entire code
+// Strict mode makes it easier for devs to avoid accidental errors
 // Strict mode forbids certain things and also highlights certain errors in the console to help in debugging
 // Strict mode lists reserved words for features that may be implemented to the language later 
 
@@ -20,10 +20,10 @@ function spitRhymes() {
 
 spitRhymes(); //calling/invoking/running a fucntion
 
-function fruitProcessor(apples, oranges) {
+function fruitProcessor(apples, oranges) { //function has parameters i.e. declared variables within the function
     return `A blend of ${oranges} oranges and ${apples} apples.`;
 }
 
-console.log(fruitProcessor(2, 3));
+console.log(fruitProcessor(2, 3)); //arguments passed to the function i.e. values for the paramenters when invoking the function
 
 // Deaclations vs Expressions

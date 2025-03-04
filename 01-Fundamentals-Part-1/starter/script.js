@@ -21,7 +21,7 @@ let $legal = 1;
 const PI = 22 / 7;
 
 //Data types
-//i) Object e.g. JSON objects ii) Primitive i.e. everything else that's nt an opject
+//i) Object e.g. JSON objects ii) Primitive i.e. everything else that's not an opject
 //Primitive data types: string, number (applies for both int and float), boolean, undefined, null, symbol, BigInt
 //Dynamic typing enables JS to define datatypes automatically based on the value stored in a var. 
 // In JS, it is the value that has a type, not the var. A new value with a different datatype can be reassigned to the var
@@ -39,7 +39,7 @@ console.log(typeof age);
 console.log(typeof lastName);
 console.log(typeof isMale);
 console.log(typeof birthDate);
-console.log(typeof birthPlace); //returns type as object. Bug in JS, not fixed for legacy reasons
+console.log(typeof birthPlace); //returns null type as object. Bug in JS, not fixed for legacy reasons
 console.log(typeof dob);
 console.log(dob);
 console.log("");
@@ -66,8 +66,8 @@ console.log(person1 + " " + person2);
 console.log("");
 
 let x = 10;
-x += x; //x=xtx
-x *= x; //x=xtx
+x += x; //x=x+1
+x *= x; //x=x*x
 x--; //x=x-1
 console.log(x);
 
@@ -80,7 +80,8 @@ console.log(ageBob >= legalAge);
 console.log(isEligible);
 
 //Operator precedence
-//grouping in () takes the highest precedence. All math operators are executed b4 comparison opeators
+//grouping in () takes the highest precedence. 
+//All math operators are executed b4 comparison opeators
 //Documented here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_precedence
 let a, b;
 b = a = 10 - 1 - 2;
@@ -111,14 +112,14 @@ let century;
 if (yob >= 1900 && yob < 2000) {
     century = "twentieth";
 } else
-    if (yob >= 2000 && yob < 2100) {
+if (yob >= 2000 && yob < 2100) {
         century = "twenty first";
-    } else {
-        century = "time traveller";
+} else {
+    century = "time traveller";
     }
 
 console.log(`${century} century👌`);
-console.log('');
+console.log(''); 
 
 //Type convertion - exclusively converting a datatype to another
 const inputYear = '2000'; //data type - string
@@ -134,19 +135,19 @@ console.log(String(yob), yob); //number conversion to string
 //Happens whenever an operator is dealing with two values of different data types
 console.log('I am ' + 23 + 'years old'); //type coersion by joining strings and an integer
 console.log('I am ' + String(23) + 'years old');  //situation if type coersion wasn't supported in JS
-console.log('20' - '10' - 2); //-,*,/ operators trigger type coersion
-console.log('20' + '10' + 2); //plus operator does not, in concatenates
+console.log('20' - '10' - 2); //-*/ operators trigger type coersion
+console.log('20' + '10' + 2); //plus operator does not, it concatenates
 console.log(2 + 3 + 4 + '5'); //95
 console.log('10' - '4' - 3 + '5'); //35
 console.log('');
 
 
 //Truthy and falsy values
-//Falsy values are values that are not exaclty false but will become false when converted into boolean type
+//Falsy values are values that are not exactly false but will become false when converted into boolean type
 //Five falsy values: 0, null, undefined, '', NaN (of course false itself is a falsy value but not included)
-//Trythy values will become true when converted into boolean type
-//Trythy values is everything else that is not a falsy value e.g. any no that is not 0, or any string that is not empty
-console.log(Boolean(''));
+//Truthy values will become true when converted into boolean type
+//Truthy values is everything else that is not a falsy value e.g. any no that is not 0, or any string that is not empty
+console.log(Boolean('')); 
 console.log(Boolean({}));
 console.log(Boolean('test'));
 console.log(Boolean(0));
@@ -169,13 +170,13 @@ if (height) {
 console.log("");
 
 // Equality operators
-// === strict equality operator - striclty equal - compares the exact values & does perform type coersion
-// == loose equality opertor - loosely equal - compares values, and type coerses during comparison
-//General rule for clean code, avoid the == loose equality operator as much as you can. Prone to errors
+// === strict equality operator: strictly equal - compares the exact values & does not perform type coersion
+// == loose equality opertor: loosely equal - compares values, and type coerses during comparison
+// General rule for clean code, avoid the == loose equality operator as much as you can. Prone to errors
 // !==, != Different operator (not equal). Strict and loose, respectively
 
 const newAge = 18;
-console.log(newAge === '18');//false - no type coersion
+console.log(newAge === '18'); //false - no type coersion
 console.log(newAge == '18'); //true - '18' type coersed to 18 for comparison
 console.log(newAge === 18); //true compares exact value i.e. two numbers
 
@@ -226,7 +227,7 @@ switch (dayLight) {
 
 // The conditional/ternary operator
 // Allows to write an if-else condition equivalent but in one line
-// Not a replacement of an if-else statement as it cannot be used on boger comparisons
+// Not a replacement of an if-else statement as it cannot be used on bigger comparisons
 console.log('');
 dayLight === "Sunday" ? console.log("They not like us") : console.log("Overtime");
 newAge <= 18 ? console.log("Teetotaller") : console.log("Knock yourself out");
