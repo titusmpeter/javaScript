@@ -150,7 +150,12 @@ if (buddies.includes('Nina')) { //'includes' method can be used to write conditi
 }
 
 /* Write your code below. Good luck! 🙂 */
-let tip;
+// const calcTip = bill >= 50 && bill <= 300? bill*0.15: bill*0.2;
+function calcTip (bill) {
+    return bill >= 50 && bill <= 300? bill*0.15: bill*0.2;
+}
+
+/*let tip;
 function calcTip (bill) {
     if (bill >= 50 && bill <=300) {
         tip = 0.15 * bill;
@@ -158,15 +163,31 @@ function calcTip (bill) {
         tip = 0.2 * bill;
     }
     return tip;
-}
-
-console.log(calcTip(100));
-
-const bills = new Array(125,555,44);
+} */
+const bills = new Array(125,555,44); //Good practice - give arrays plural names e.g. tips, bills, etc. since they contain multiple elememnts
 const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
-const totals = new Array(calcTip(bills[0])+bills[0], calcTip(bills[1])+bills[1], calcTip(bills[2])+bills[2]);
+// const totals = new Array(calcTip(bills[0])+bills[0], calcTip(bills[1])+bills[1], calcTip(bills[2])+bills[2]);
+const totals = new Array(tips[0]+bills[0], tips[1]+bills[1], tips[2]+bills[2]);
 console.log(tips);
-console.log(totals);
+console.log(totals); 
+console.log('');
+
+// Objects - introduction
+// Defines key-value pairs. Keys are also defined as properties e.g. An object has five properties ()
+// There are multiple ways of creating objects. Using the {} is the easiest - the object literal syntax
+// Objects should be used for more unstructured data, while arrays should be used for more structured/ordered data
+// The order in which items are stored in the object does not matter during retrieval, unlike in arrays
+const guerilla = {
+    sirName : 'Kifefe',
+    firstName : 'Kizza',
+    occupation: 'Physician',
+    dob : 1957,
+    age : 2037 - 1957,
+    spouse: 'Winnie Karagwa',
+    foe : 'M7'
+}
+console.log(guerilla.spouse);
+console.log(guerilla['spouse']); //bracket notation. Accepts any expression
 
 
 
