@@ -149,6 +149,27 @@ if (buddies.includes('Nina')) { //'includes' method can be used to write conditi
     console.log('Nina Simonne in the building!');
 }
 
+/* Write your code below. Good luck! 🙂 */
+let tip;
+function calcTip (bill) {
+    if (bill >= 50 && bill <=300) {
+        tip = 0.15 * bill;
+    } else {
+        tip = 0.2 * bill;
+    }
+    return tip;
+}
+
+console.log(calcTip(100));
+
+const bills = new Array(125,555,44);
+const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+const totals = new Array(calcTip(bills[0])+bills[0], calcTip(bills[1])+bills[1], calcTip(bills[2])+bills[2]);
+console.log(tips);
+console.log(totals);
+
+
+
 
 
 
