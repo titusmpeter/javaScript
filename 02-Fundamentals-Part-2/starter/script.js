@@ -151,8 +151,8 @@ if (buddies.includes('Nina')) { //'includes' method can be used to write conditi
 
 /* Write your code below. Good luck! 🙂 */
 // const calcTip = bill >= 50 && bill <= 300? bill*0.15: bill*0.2;
-function calcTip (bill) {
-    return bill >= 50 && bill <= 300? bill*0.15: bill*0.2;
+function calcTip(bill) {
+    return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
 }
 
 /*let tip;
@@ -164,12 +164,12 @@ function calcTip (bill) {
     }
     return tip;
 } */
-const bills = new Array(125,555,44); //Good practice - give arrays plural names e.g. tips, bills, etc. since they contain multiple elememnts
+const bills = new Array(125, 555, 44); //Good practice - give arrays plural names e.g. tips, bills, etc. since they contain multiple elememnts
 const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
 // const totals = new Array(calcTip(bills[0])+bills[0], calcTip(bills[1])+bills[1], calcTip(bills[2])+bills[2]);
-const totals = new Array(tips[0]+bills[0], tips[1]+bills[1], tips[2]+bills[2]);
+const totals = new Array(tips[0] + bills[0], tips[1] + bills[1], tips[2] + bills[2]);
 console.log(tips);
-console.log(totals); 
+console.log(totals);
 console.log('');
 
 // Objects - introduction
@@ -178,22 +178,52 @@ console.log('');
 // Objects should be used for more unstructured data, while arrays should be used for more structured/ordered data
 // The order in which items are stored in the object does not matter during retrieval, unlike in arrays
 const guerilla = {
-    sirName : 'Kifefe',
-    firstName : 'Kizza',
+    sirName: 'Kifefe',
+    firstName: 'Kizza',
     occupation: 'Physician',
-    dob : 1957,
-    age : 2037 - 1957,
+    dob: 1957,
+    age: 2037 - 1957,
     spouse: 'Winnie Karagwa',
-    foe : 'M7'
+    foe: 'M7'
 }
 console.log(guerilla.spouse);
 console.log(guerilla['spouse']); //bracket notation. Accepts any expression
+console.log('');
 
+// Object methods
+// Method - any function that is attached to a object i.e. an object property that holds a function value
 
+const soldier = {
+    sirName: 'Avenger',
+    firstName: 'Muhoozi',
+    occupation: 'CDF',
+    dob: 1973,
+    hasIQ: false,
+    parent: 'M7',
+    comrades: ['none', 'nada', 0],
 
+    calcAge: function (dob) { //method
+        return 2037 - dob;
+    },
 
+    calcNewAge: function () {
+        //console.log(this); //using this keyword to point to the current object
+        return 2037 - this.dob; //using this keyword to point to 'soldier' object
+    },
 
+    calcNewAge2: function () {
+        this.ages = 2037 - this.dob; //create a new object property 'age' i.e. age : 2037 - 1973
+        return this.ages; //return the new property value
+    },
 
-
-
+    getSummary: function () {
+        return `${this.firstName} is a ${this.calcNewAge2()}-year old ${this.occupation}`;
+    }
+};
+console.log(soldier.calcAge(2000));
+// console.log(soldier['calcAge'](2001));
+console.log(soldier.calcNewAge());
+console.log(soldier.calcNewAge2());
+console.log(soldier.age);
+console.log(soldier.getSummary());
 
