@@ -129,7 +129,7 @@ console.log(buddies);
 const poopd = buddies.pop();
 console.log(poopd);
 
-buddies.shift(); // remove first elemnt of the array . shift also returns the removed element
+buddies.shift(); // remove first element of the array. shift also returns the removed element
 console.log(buddies);
 const shifted = buddies.shift();
 console.log(shifted);
@@ -191,8 +191,7 @@ console.log(guerilla['spouse']); //bracket notation. Accepts any expression
 console.log('');
 
 // Object methods
-// Method - any function that is attached to a object i.e. an object property that holds a function value
-
+// Method - any function that is attached to an object i.e. an object property that holds a function value
 const soldier = {
     sirName: 'Avenger',
     firstName: 'Muhoozi',
@@ -202,28 +201,62 @@ const soldier = {
     parent: 'M7',
     comrades: ['none', 'nada', 0],
 
-    calcAge: function (dob) { //method
-        return 2037 - dob;
+    calcAge: function (dob) { //Function as an expression. A declaration wont work i.e. function calcAge (dob) {}
+        return (2037 - dob); // the expression produces the value. calcAge = key
     },
 
     calcNewAge: function () {
-        //console.log(this); //using this keyword to point to the current object
-        return 2037 - this.dob; //using this keyword to point to 'soldier' object
+        //console.log(this); //using this keyword to point to the current object. 'this' = current object
+        return (2037 - this.dob); //using this keyword to point to 'soldier' object
     },
 
     calcNewAge2: function () {
-        this.ages = 2037 - this.dob; //create a new object property 'age' i.e. age : 2037 - 1973
+        this.ages = (2037 - this.dob); //create a new object property 'age' i.e. age : 2037 - 1973
         return this.ages; //return the new property value
     },
 
     getSummary: function () {
-        return `${this.firstName} is a ${this.calcNewAge2()}-year old ${this.occupation}`;
+        return `${this.firstName} is a ${this.calcNewAge2()}-year old ${this.occupation}, and he has ${this.hasIQ ? "high" : "low"} IQ`;
     }
 };
 console.log(soldier.calcAge(2000));
 // console.log(soldier['calcAge'](2001));
 console.log(soldier.calcNewAge());
-console.log(soldier.calcNewAge2());
-console.log(soldier.age);
+console.log(soldier.calcNewAge2()); // 'calcNewAge2' function has to be called for the new property 'ages' to be available, otherwise it is 'undefined'
+console.log(soldier.ages); //'calcNewAge2' function had to be called for the new property 'ages' to be available
 console.log(soldier.getSummary());
+console.log('');
+
+/* Write your code below. Good luck! 🙂 */
+'use strict';
+const john = {
+    fullName: "Mark Miller",
+    mass: 92,
+    height: 1.95,
+    calcBMI: function () {
+        this.bmi = this.mass / (this.height ** 2);
+        return this.bmi;
+    }
+}
+
+const mark = {
+    fullName: "John Smith",
+    mass: 78,
+    height: 1.69,
+    calcBMI: function () {
+        this.bmi = this.mass / (this.height ** 2);
+        return this.bmi;
+    }
+}
+// john.calcBMI(); // Call the  function first before accessing the new element therein, otherwise it'll be undefined
+// mark.calcBMI();
+console.log(john.calcBMI() > mark.calcBMI() ? `${john.fullName}'s BMI (${john.bmi}) is greater that ${mark.fullName}'s BMI (${mark.bmi})!`
+    : `${mark.fullName}'s BMI (${mark.bmi}) is greater that ${john.fullName}'s BMI (${john.bmi})!`);
+
+// Loops
+// allows automation of repititive tasks
+// for-loop - a loop with a counter. Keeps running while the condition is TRUE
+for (let rep = 1; rep <= 5; rep++) { //created 'rep' var and initialize the counter at 1, run the loop and increment var until the condition is FALSE
+    console.log(`Keep pushing rep no. ${rep}`);
+}
 
