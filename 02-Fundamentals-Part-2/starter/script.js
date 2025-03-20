@@ -259,4 +259,23 @@ console.log(john.calcBMI() > mark.calcBMI() ? `${john.fullName}'s BMI (${john.bm
 for (let rep = 1; rep <= 5; rep++) { //created 'rep' var and initialize the counter at 1, run the loop and increment var until the condition is FALSE
     console.log(`Keep pushing rep no. ${rep}`);
 }
+console.log(``);
 
+// Looping through Objects
+const buddies2 = ['Tonie', 'Toni', 'Tone', 'Simone'];
+const details2 = [sirName, "Peter", 1988 - 1945, buddies2, Boolean(0), Number(buddies2[1])];
+
+for (let i =0; i<=buddies2.length-1; i++) { 
+    console.log(buddies2[i]);
+}
+
+for (let i =0; i<details2.length; i++) { 
+    console.log(`array pos: ${i}, element: ${details2[i]}, type: ${typeof details2[i]}`); //o/p position of i, value, and datatype
+}
+
+let typeElement = [];
+for (let j = buddies2.length; j>= 0; j--) {
+        typeElement[j] = typeof typeElement[j];
+       // typeElement.push(typeof buddies2[j]);
+}
+console.log(typeElement);
