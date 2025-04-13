@@ -263,19 +263,130 @@ console.log(``);
 
 // Looping through Objects
 const buddies2 = ['Tonie', 'Toni', 'Tone', 'Simone'];
-const details2 = [sirName, "Peter", 1988 - 1945, buddies2, Boolean(0), Number(buddies2[1])];
+const details2 = [sirName, "Peter", 1988 - 1945, buddies2, Boolean(0), Number(buddies2[1]), Boolean(buddies2[2])];
 
-for (let i =0; i<=buddies2.length-1; i++) { 
+for (let i = 0; i <= buddies2.length - 1; i++) {
     console.log(buddies2[i]);
 }
 
-for (let i =0; i<details2.length; i++) { 
+for (let i = 0; i < details2.length; i++) {
     console.log(`array pos: ${i}, element: ${details2[i]}, type: ${typeof details2[i]}`); //o/p position of i, value, and datatype
 }
 
 let typeElement = [];
-for (let j = buddies2.length; j>= 0; j--) {
-        typeElement[j] = typeof typeElement[j];
-       // typeElement.push(typeof buddies2[j]);
+for (let j = details2.length - 1; j >= 0; j--) {
+    //typeElement[j] == (typeof details2[j]);
+    typeElement.push(typeof details2[j]);
+
 }
+console.log('---loop backwards---');
 console.log(typeElement);
+
+let typeElement2 = [];
+for (let j = 0; j < details2.length; j++) {
+    //typeElement[j] == (typeof details2[j]);
+    typeElement2.push(typeof details2[j]);
+
+}
+console.log(typeElement2);
+
+//Continue and Break
+//Continue - exits the current iteration of the loop and continues to the next iteration
+//Break - completely terminates the entire loop
+let typeElement3 = [];
+for (let j = 0; j < details2.length; j++) {
+    if (typeof details2[j] !== 'number') {
+        continue;
+    }
+    else {
+        typeElement3.push(typeof details2[j]);
+    }
+}
+console.log(`---numbers only---`)
+console.log(typeElement3);
+
+let element4 = [];
+for (let j = 0; j < details2.length; j++) {
+    if (typeof details2[j] === 'number') {
+        continue;
+    }
+    else {
+        element4.push(details2[j]);
+    }
+}
+console.log(`---no numbers---`)
+console.log(element4);
+
+let element5 = [];
+for (let j = 0; j < details2.length; j++) {
+    if (typeof details2[j] === 'number' || typeof details2[j] === 'string') continue;
+    element5.push(details2[j]);
+}
+console.log(`---no numbers & strings---`)
+console.log(element5);
+
+let element6 = [];
+for (let j = 0; j < details2.length; j++) {
+    if (typeof details2[j] === 'object') break;
+    element6.push(details2[j]);
+}
+console.log(`---break loop---`)
+console.log(element6);
+
+console.log('---loop within a loop---');
+for (let excercise = 1; excercise <= 2; excercise++) {
+    console.log(`For: starting workout: ${excercise} `);
+    for (let rep = 1; rep <= 3; rep++) {
+        console.log(`rep: ${rep}, workout: ${excercise}  `);
+    }
+}
+//While loop - more versatile as compared to for-loop
+//Requires only the condtition to remain true for it to keep working
+//It does not need a counter in many specific usecases
+console.log('---while loop---');
+let excercise = 1;
+while (excercise <= 2) {
+    console.log(`While: starting workout: ${excercise} `);
+    let rep = 3
+    while (rep > 0) {
+        console.log(`rep: ${rep}, workout: ${excercise}  `);
+        rep--;
+    }
+    excercise++;
+}
+
+let dice = Math.trunc((Math.random() * 6) + 1); //random number btw 1&6
+while (dice !== 6) {
+    console.log(`you rolled a ${dice}`);
+    //dice === 6 ? console.log(`end of loop`) : console.log(`you rolled a ${dice}`);
+    dice = Math.trunc((Math.random() * 6) + 1);
+    if (dice === 6) console.log(`end of loop`);
+}
+
+/////////////////////////////////////////////////////////
+const calcTip2 = function (bill) {
+    return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+}
+
+/* Write your code below. Good luck! 🙂 */
+
+const bills2 = new Array(22, 295, 176, 440, 37, 105, 10, 1100, 86, 52);
+const tips2 = [];
+const totals2 = [];
+
+for (let i = 0; i < bills2.length; i++) {
+    // tips2.push(calcTip2(bills2[i]));
+    tips2[i] = calcTip2(bills2[i]);
+    totals2[i] = tips2[i] + bills2[i];
+    // totals2.push(tips2[i] + bills2[i]);
+}
+console.log(tips2, bills2, totals2);
+
+function calcAverage2(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    return sum / arr.length;
+}
+console.log(calcAverage2(totals2)); 
