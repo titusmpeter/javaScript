@@ -17,7 +17,7 @@ if (hasDL) console.log(`You can drive D`);
 function spitRhymes() {
     console.log(`Straight as an arrow`);
 }
-spitRhymes(); //calling/invoking/running a fucntion
+spitRhymes(); //calling/invoking/running a function
 
 function fruitProcessor(apples, oranges) { //function has parameters i.e. declared variables within the function
     return `A blend of ${oranges} oranges and ${apples} apples.`; //parameters are placeholders for the actual values
@@ -107,7 +107,7 @@ const sirName = "Mackintosh";
 const details = [sirName, "Peter", 1988 - 1945, buddies]; //a mix of different data types and expressions
 console.log(details);
 
-console.log(calAge1(years[0]), calAge1(years[2]), calAge1(years[years.length - 1])); //passing aray elements as arguments to a function
+console.log(calAge1(years[0]), calAge1(years[2]), calAge1(years[years.length - 1])); //passing array elements as arguments to a function
 
 const ages2 = new Array(calAge1(years[0]), calAge1(years[2]), calAge1(years[years.length - 1]));
 console.log(ages2);
@@ -118,7 +118,7 @@ console.log(ages3)
 // Array methods - array operations and functions
 buddies.push('Master'); // Add element to the end of an array i.e calling the method/function push on the buddies array
 console.log(buddies);
-const newlength = buddies.push('Jam');// push function returns a value i.e. the length of the array
+const newlength = buddies.push('Jam'); // push function returns a value i.e. the length of the array
 console.log(newlength);
 
 buddies.unshift('Jay'); // adds elements to the beginning of the array. 'unshift' also returns the length of the array, just like 'push'
@@ -164,7 +164,7 @@ function calcTip (bill) {
     }
     return tip;
 } */
-const bills = new Array(125, 555, 44); //Good practice - give arrays plural names e.g. tips, bills, etc. since they contain multiple elememnts
+const bills = new Array(125, 555, 44); //Good practice - give arrays plural names e.g. tips, bills, etc. since they contain multiple elements
 const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
 // const totals = new Array(calcTip(bills[0])+bills[0], calcTip(bills[1])+bills[1], calcTip(bills[2])+bills[2]);
 const totals = new Array(tips[0] + bills[0], tips[1] + bills[1], tips[2] + bills[2]);
