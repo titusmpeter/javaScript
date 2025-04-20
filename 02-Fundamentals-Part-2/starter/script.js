@@ -135,7 +135,7 @@ const shifted = buddies.shift();
 console.log(shifted);
 
 console.log(buddies.indexOf("Tone")); // tells the position of an element in an array
-console.log(buddies.indexOf("Bob")); // returns '-1' if an element does not extist
+console.log(buddies.indexOf("Bob")); // returns '-1' if an element does not exist
 
 console.log(buddies.includes('Bob')); // 'includes' method returns boolean value if the element exists in the array or not 
 console.log(buddies.includes('Tone'));
@@ -186,7 +186,7 @@ const guerilla = {
     spouse: 'Winnie Karagwa',
     foe: ['M7', 'Muhoonzi', 'NRM']
 }
-console.log(guerilla.spouse);
+console.log(guerilla.spouse); //dot notation
 console.log(guerilla['spouse']); //bracket notation. Accepts any expression
 console.log(guerilla.foe[0]);
 console.log(guerilla.foe[guerilla.foe.length - 1]);
@@ -228,7 +228,7 @@ const soldier = {
     },
 
     calcNewAge2: function () {
-        this.ages = (2037 - this.dob); //create a new object property 'age' i.e. age : 2037 - 1973
+        this.ages = (2037 - this.dob); //create a new object property 'ages' i.e. ages : 2037 - 1973
         return this.ages; //return the new property value
     },
 
@@ -236,8 +236,8 @@ const soldier = {
         return `${this.firstName} is a ${this.calcNewAge2()}-year old ${this.occupation}, and he has ${this.hasIQ ? "high" : "low"} IQ`;
     }
 };
-console.log(soldier.calcAge(2000));
-// console.log(soldier['calcAge'](2001));
+console.log(soldier.calcAge(2000)); //dot notation
+console.log(soldier['calcAge'](2001)); //bracket notation
 console.log(soldier.calcNewAge());
 console.log(soldier.calcNewAge2()); // 'calcNewAge2' function has to be called for the new property 'ages' to be available, otherwise it is 'undefined'
 console.log(soldier.ages); //'calcNewAge2' function had to be called for the new property 'ages' to be available
@@ -245,7 +245,7 @@ console.log(soldier.getSummary());
 console.log('');
 
 /* Write your code below. Good luck! 🙂 */
-'use strict';
+//'use strict';
 const john = {
     fullName: "Mark Miller",
     mass: 92,
@@ -287,14 +287,13 @@ for (let i = 0; i <= buddies2.length - 1; i++) {
 }
 
 for (let i = 0; i < details2.length; i++) {
-    console.log(`array pos: ${i}, element: ${details2[i]}, type: ${typeof details2[i]}`); //o/p position of i, value, and datatype
+    console.log(`array pos: ${i}, element: ${details2[i]}, type: ${typeof details2[i]}`); //o/p position of i, element, and datatype
 }
 
 let typeElement = [];
 for (let j = details2.length - 1; j >= 0; j--) {
     //typeElement[j] == (typeof details2[j]);
     typeElement.push(typeof details2[j]);
-
 }
 console.log('---loop backwards---');
 console.log(typeElement);
@@ -303,7 +302,6 @@ let typeElement2 = [];
 for (let j = 0; j < details2.length; j++) {
     //typeElement[j] == (typeof details2[j]);
     typeElement2.push(typeof details2[j]);
-
 }
 console.log(typeElement2);
 
@@ -358,17 +356,17 @@ for (let excercise = 1; excercise <= 2; excercise++) {
     }
 }
 //While loop - more versatile as compared to for-loop
-//Requires only the condtition to remain true for it to keep working
+//Requires only the condition to remain true for it to keep working
 //It does not need a counter in many specific usecases
 console.log('---while loop---');
 let excercise = 1;
 while (excercise <= 2) {
     console.log(`While: starting workout: ${excercise} `);
-    let rep = 3
-    while (rep > 0) {
-        console.log(`rep: ${rep}, workout: ${excercise}  `);
-        rep--;
-    }
+        let rep = 3
+        while (rep > 0) {
+            console.log(`rep: ${rep}, workout: ${excercise}  `);
+            rep--;
+        }
     excercise++;
 }
 
@@ -386,7 +384,6 @@ const calcTip2 = function (bill) {
 }
 
 /* Write your code below. Good luck! 🙂 */
-
 const bills2 = new Array(22, 295, 176, 440, 37, 105, 10, 1100, 86, 52);
 const tips2 = [];
 const totals2 = [];
