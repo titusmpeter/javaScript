@@ -184,11 +184,28 @@ const guerilla = {
     dob: 1957,
     age: 2037 - 1957,
     spouse: 'Winnie Karagwa',
-    foe: 'M7'
+    foe: ['M7', 'Muhoonzi', 'NRM']
 }
 console.log(guerilla.spouse);
 console.log(guerilla['spouse']); //bracket notation. Accepts any expression
-console.log('');
+console.log(guerilla.foe[0]);
+console.log(guerilla.foe[guerilla.foe.length - 1]);
+const nameKey = `Name`;
+console.log(guerilla['first' + nameKey] + ' ' + guerilla['sir' + nameKey]);
+
+const interestIn = prompt('Enter what are you looking for i.e. occupation, dob, age, spouse');
+if (guerilla[interestIn]) { //looking for a truthy value i.e. the value entered exists in the as a key in the object
+    console.log(guerilla[interestIn]);
+} else { //falsy if entered value does not exist as a key in the object
+    console.log('Wrong entry. Choose btwn occupation, dob, age, spouse');
+}
+
+//Adding new elements to the object
+guerilla.mainResidence = 'Prison'; //new key-value pair
+guerilla['otherResidence'] = 'Bush'; //new key-value pair
+guerilla.foe.push('Bobby'); //new array element 
+console.log(guerilla.foe);
+console.log(guerilla['mainResidence'], guerilla['otherResidence']);
 
 // Object methods
 // Method - any function that is attached to an object i.e. an object property that holds a function value
