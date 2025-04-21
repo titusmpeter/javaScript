@@ -222,8 +222,8 @@ const soldier = {
         return (2037 - dob); // the expression produces the value. calcAge = key
     },
 
-    calcNewAge: function () {
-        //console.log(this); //using this keyword to point to the current object. 'this' = current object
+    calcNewAge: function () { //method - any function that is attached to an object
+        //console.log(this); //using this keyword to point to the current object. 'this' = current object i.e. soldier
         return (2037 - this.dob); //using this keyword to point to 'soldier' object
     },
 
@@ -292,15 +292,15 @@ for (let i = 0; i < details2.length; i++) {
 
 let typeElement = [];
 for (let j = details2.length - 1; j >= 0; j--) {
-    //typeElement[j] == (typeof details2[j]);
-    typeElement.push(typeof details2[j]);
+    //typeElement[j] = (typeof details2[j]);
+    typeElement.unshift(typeof details2[j]);
 }
 console.log('---loop backwards---');
 console.log(typeElement);
 
 let typeElement2 = [];
 for (let j = 0; j < details2.length; j++) {
-    //typeElement[j] == (typeof details2[j]);
+    //typeElement2[j] = (typeof details2[j]);
     typeElement2.push(typeof details2[j]);
 }
 console.log(typeElement2);
@@ -355,26 +355,26 @@ for (let excercise = 1; excercise <= 2; excercise++) {
         console.log(`rep: ${rep}, workout: ${excercise}  `);
     }
 }
-//While loop - more versatile as compared to for-loop
+//While loop - more versatile compared to for-loop
 //Requires only the condition to remain true for it to keep working
 //It does not need a counter in many specific usecases
 console.log('---while loop---');
 let excercise = 1;
 while (excercise <= 2) {
     console.log(`While: starting workout: ${excercise} `);
-        let rep = 3
-        while (rep > 0) {
-            console.log(`rep: ${rep}, workout: ${excercise}  `);
-            rep--;
-        }
+    let rep = 3
+    while (rep > 0) {
+        console.log(`rep: ${rep}, workout: ${excercise}  `);
+        rep--;
+    }
     excercise++;
 }
 
-let dice = Math.trunc((Math.random() * 6) + 1); //random number btw 1&6
+let dice = Math.trunc((Math.random() * 6) + 1); //assign random number btw 1&6
 while (dice !== 6) {
     console.log(`you rolled a ${dice}`);
     //dice === 6 ? console.log(`end of loop`) : console.log(`you rolled a ${dice}`);
-    dice = Math.trunc((Math.random() * 6) + 1);
+    dice = Math.trunc((Math.random() * 6) + 1); //reassign a new random no. and rerun the loop
     if (dice === 6) console.log(`end of loop`);
 }
 
