@@ -59,7 +59,21 @@ const degreeToKelvin = function () {
     unit: 'celcius',
     value: Number(prompt('Degrees in celcius: ')),
   };
+  // debugger;
   console.table(measurements);
   return measurements.value + 273;
 };
 console.log(degreeToKelvin());
+
+//Challenge 1
+const data1 = new Array(17, 21, 23, -5, -3, 4);
+console.log(`...${data1[0]}°C`);
+
+const printForecast = function (arr) {
+  let str = '';
+  for (let i = 0; i < arr.length; i++) {
+    str += `${arr[i]}°C in ${i + 1} days ... `;
+  }
+  return str;
+};
+console.log(`... ` + printForecast(data1));
