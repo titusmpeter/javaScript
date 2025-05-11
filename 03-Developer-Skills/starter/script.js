@@ -77,3 +77,5 @@ const printForecast = function (arr) {
   return str;
 };
 console.log(`... ` + printForecast(data1));
+
+// Challenge II
