@@ -3,27 +3,58 @@
 <!-- html contains elements, created using opening and closing tags -->
 <!-- Attributes are used to describe elements e.g. href atrribute for hyperlinks -->
 <!-- !+tab generates the basic html file as shown below -->
+<!-- block elements and in-line elements -->
+<!-- Classes and IDs can be applied to any elements. They are crucial in identifying elements for manipulation and stylying (DOM and CSS) -->
+<!-- Used to style the elements and the overal page -->
+<!-- IDs have to be unique, classes do not. Class names can be used multiple times -->
+<!-- Box-model: fundamental to CSS. The main factor that defines how elements are displayed and sized on a webpage-->
+<!-- Each element can be seen as a rectangular box. Each box can have a width, height, margin, border, & padding -->
+<!-- All can be specified using CSS properties -->
+<!-- Content - where text, images, and other content go. Height and width can be specified using CSS peroperties -->
+<!-- Padding - transparent area around the content, inside of the box -->
+<!-- Border - goes around the padding and the content -->
+<!-- Margin - White space outside the box. i.e. Space between boxes -->
+<!-- Fill area - area that gets filled with background color or background image i.e. content & padding areas (but not the border) -->
+<!-- By default, on a webpage, some elements get default margins and padding if not defined -->
+<!-- Good practice is to reset all the margins and paddings (global reset) on all elements before styling a page -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Learning HTML and CSS</title>
+    <link href="./style.css" rel="stylesheet"/>
+    <style></style>
+    
   </head>
 
   <body>
     <h1>Level 1 heading</h1>
     <p>Describe a paragraph</p>
     <h6>Level 6 heading</h6>
-    <p>
-      Learning the basics of JS without HTML and CSS knowlewdge for server side
-      scripting. However, DOM manipulation requires HTML and CSS basics. You ca
-      learn more here:
-      <a href="https://github.com/titusmpeter/javaScript">My github</a>
+    <p class="paragraph1"> Learning the basics of JS without HTML and CSS knowlewdge for server side
+      scripting. However, DOM manipulation requires HTML and CSS basics. You can
+      learn more here:<a href="https://github.com/titusmpeter/javaScript">My github</a>
     </p>
     <h2>Level 2 heading: Domestic terrorist</h2>
-    <p>
-      <img src="./huey-freeman-by-stelar-boondocks.png" />
+    <p class="paragraph2"> 
+      <h4>Enter your name</h4>
+       <form id="first-name">
+        <p class="paragraph1">First Name  
+            <input type="text" placeholder="first">
+        </p>
+      </id>
+      </form>
+      <form id="last-name"> 
+        <p class="paragraph2"> Last Name 
+          <input type="text" placeholder="last"> 
+        </p>
+      </id>
+      </form>
+        <button>Ok</button>   
+      </p>
+      </form>
+      <img id="my-photo" src="./huey-freeman-by-stelar-boondocks.png" />
     </p>
   </body>
 </html>
