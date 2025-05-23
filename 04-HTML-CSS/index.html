@@ -3,11 +3,11 @@
 <!-- html contains elements, created using opening and closing tags -->
 <!-- Attributes are used to describe elements e.g. href atrribute for hyperlinks -->
 <!-- ! and tab generates the basic html file as shown below -->
-<!-- block elements and in-line elements -->
+<!-- There are block elements and in-line elements -->
 <!-- Classes and IDs can be applied to any elements. They are crucial in identifying elements for manipulation and stylying (DOM and CSS) -->
 <!-- Used to style the elements and the overal page -->
-<!-- IDs have to be unique, classes do not. Class names can be used multiple times -->
-<!-- Box-model: fundamental to CSS. The main factor that defines how elements are displayed and sized on a webpage-->
+<!-- IDs have to be unique, classes do not. Class names can be used multiple times in different elements -->
+<!-- Box-model: fundamental to CSS. The main factor that defines how elements are displayed and sized on a webpage -->
 <!-- Each element can be seen as a rectangular box. Each box can have a width, height, margin, border, & padding -->
 <!-- All can be specified using CSS properties -->
 <!-- Content - where text, images, and other content go. Height and width can be specified using CSS peroperties -->
@@ -17,6 +17,12 @@
 <!-- Fill area - area that gets filled with background color or background image i.e. content & padding areas (but not the border) -->
 <!-- By default, on a webpage, some elements get default margins and padding if not defined -->
 <!-- Good practice is to reset all the margins and paddings (global reset) on all elements before styling a page -->
+<!-- .xyz{} - select a class in CSS -->
+<!-- *{} - select all elements (universal selector) -->
+<!-- #xyz{} - select id -->
+<!-- h1{}, for example - select element name -->
+<!-- input, button{} - multiple selector - rule will apply to both elements -->
+<!-- #first-name h2{} - Child selector -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -25,12 +31,19 @@
     <title>Learning HTML and CSS</title>
     <link href="./style.css" rel="stylesheet"/>
     <style>
-      body {
-      /*  background-color: aquamarine; 
-      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
-      }
+      body { /*
+        background-color: rgb(119, 246, 246);
+        font-family: Arial, Helvetica, sans-serif;
+        font: inherit;
+        font-size: medium;
+        padding: 25px;
+           */ }
+      .foot { /*
+        background-color: rgb(106, 81, 234);
+        font-family: sans-serif;
+        width: fit-content;
+      */}
     </style>
-    
   </head>
 
   <body>
@@ -65,6 +78,6 @@
   
   </body>
   <footer>
-    <p> This is a f00ter! </p>
+    <p class="foot">This is a f00ter!</p>
   </footer>
 </html>
