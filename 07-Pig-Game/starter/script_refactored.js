@@ -12,16 +12,45 @@ const current1El = document.getElementById('current--1'); //current score for pl
 const player0El = document.querySelector('.player--0');
 const player1El = document.querySelector('.player--1');
 
-// initial conditions
+let scores, currentScore, activePlayer, playing; //declare empty vars - scoping
 
-score0El.textContent = 0; //setting default score display to 0 (from 43)
-score1El.textContent = 0; //setting default score display to 0 (from 24)
-diceEl.classList.add('hidden'); //adding 'hidden' class (CSS) to 'dice' class (html) and by extention the html element containing 'dice' class
+//set initial conditions
+const init = () => {
+  //assign/reset values for internal state variables to their initial state
+  scores = [0, 0];
+  currentScore = 0;
+  activePlayer = 0;
+  playing = true;
 
-let currentScore = 0;
-let activePlayer = 0;
-const scores = [0, 0];
-let playing = true;
+  //reset visible UI values to the initial score
+  score0El.textContent = 0;
+  score1El.textContent = 0;
+  current0El.textContent = 0;
+  current1El.textContent = 0;
+
+  diceEl.classList.add('hidden'); //adding 'hidden' class (CSS) to 'dice' class (html) and by extention the html element containing 'dice' class
+
+  //remove winner class
+  player0El.classList.remove('player--winner');
+  player1El.classList.remove('player--winner');
+
+  //remove player active class and add class to player 0
+  player0El.classList.add('player--active');
+  player1El.classList.remove('player--active');
+
+  diceEl.classList.add('hidden'); //hidding dice image
+};
+init(); //call initialization function
+
+const switchPlayer = () => {
+  document.getElementById(`current--${activePlayer}`).textContent = 0; //set score for current palyer to 0
+  currentScore = 0; // set current score to 0
+  activePlayer = activePlayer === 0 ? 1 : 0; //Switch user
+
+  //toggle class (removes if it exists, adds if it doesn't)
+  player0El.classList.toggle('player--active');
+  player1El.classList.toggle('player--active');
+};
 
 //Rolling dice event handler
 btnRoll.addEventListener('click', () => {
@@ -42,14 +71,7 @@ btnRoll.addEventListener('click', () => {
       document.getElementById(`current--${activePlayer}`).textContent =
         currentScore;
     } else {
-      // switchPlayer()
-      document.getElementById(`current--${activePlayer}`).textContent = 0; //set score for current palyer to 0
-      currentScore = 0; // set current score to 0
-      activePlayer = activePlayer === 0 ? 1 : 0; //Switch user
-
-      //toggle class (removes if it exists, adds if it doesn't)
-      player0El.classList.toggle('player--active');
-      player1El.classList.toggle('player--active');
+      switchPlayer();
     }
   }
 });
@@ -62,7 +84,7 @@ btnHold.addEventListener('click', () => {
     document.getElementById(`score--${activePlayer}`).textContent =
       scores[activePlayer]; //display cummulative score
 
-    // check if current players score is >=100?
+    // check if current players score is >=50?
     if (scores[activePlayer] >= 50) {
       playing = false; //set playing to false
       diceEl.classList.add('hidden'); //hide dice by adding hidden class
@@ -75,40 +97,10 @@ btnHold.addEventListener('click', () => {
         .querySelector(`.player--${activePlayer}`)
         .classList.remove('player--active');
     } else {
-      // switchPlayer();
-      document.getElementById(`current--${activePlayer}`).textContent = 0; //set score for current palyer to 0
-      currentScore = 0; // set current score to 0
-      activePlayer = activePlayer === 0 ? 1 : 0; //Switch user
-
-      //toggle class (removes if it exists, adds if it doesn't)
-      player0El.classList.toggle('player--active');
-      player1El.classList.toggle('player--active');
+      switchPlayer();
     }
   }
 });
 
 //reset the initial conditions of the game - factoring the order
-btnNewGame.addEventListener('click', () => {
-  //initialize()
-  //reset visible UI values to the initial score
-  score0El.textContent = 0;
-  score1El.textContent = 0;
-  current0El.textContent = 0;
-  current1El.textContent = 0;
-
-  //remove winner class
-  player0El.classList.remove('player--winner');
-  player1El.classList.remove('player--winner');
-
-  //remove player active class and add class to player 0
-  player0El.classList.add('player--active');
-  player1El.classList.remove('player--active');
-
-  diceEl.classList.add('hidden'); //hidding dice image
-
-  //reset internal state variables to their initial state
-  currentScore = 0;
-  activePlayer = 0;
-  scores = [0, 0];
-  playing = true;
-});
+btnNewGame.addEventListener('click', init); //pass the init function as as argument
