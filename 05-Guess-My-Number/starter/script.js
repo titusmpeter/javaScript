@@ -1,14 +1,20 @@
 // Document Object Model - DOM
-// a concept in web dev that defines the hierarchical structure of a web page
-// DOM provides a way to interact with webpages and manipulate them.
-// The DOM is a representation of a web page's structure as a tree-like structure, ...
+// Structured representation of HTML documents
+// A concept in web dev that defines the hierarchical structure of a web page
+// Allows the use of JS to access HTML elements (HTML attributes) and styles (CSS styles) in order to manipulate them
+// A DOM can be viewed as aconnection point btw HTML documnets and JS code
+// The DOM is automatcally created by the browser as soon as the HMTL code page loads
+// The DOM is a complete representation of a HTML documwnt as a tree-like structure, ...
 // with each element on the page being a node in the tree.
-// The DOM is not part of JS language. DOM-related stuff is not part of DOM
+// Everything that is in the HTML documnet has to be in the DOM; including comments
+// The DOM is not part of JS language. DOM-related stuff is not part of JS
+// JS is a nothing but a dialect of the ECMA script specification. DOM related stuff is not part of ECMA
 // The DOM, its methods and properties are part of a larger collection of Web APIs
 // Web APIs are libraries that browsers implement and can be accessed using JS code
+// Browsers implement an officoal DOM specifiction; thus the reason DOM manipulation works the same in all browsers
 /*
 console.log(document.querySelector('.message').textContent); //display the value of class item in console
-document.getElementsByClassName('.message').textContent;
+document.getElementsByClassName('message').textContent;
 document.querySelector('.message').textContent = 'Correct'; //assigning new value to the class item
 document.querySelector('.guess').value = 13; //
 console.log(document.querySelector('.guess').value); //read the value of the class item 
